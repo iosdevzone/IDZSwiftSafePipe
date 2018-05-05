@@ -46,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		30B5D3FF209D629C00E8A364 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		"IDZSwiftSafePipe::IDZSwiftSafePipe::Product" /* IDZSwiftSafePipe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IDZSwiftSafePipe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"IDZSwiftSafePipe::IDZSwiftSafePipeTests::Product" /* IDZSwiftSafePipeTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = IDZSwiftSafePipeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_12 /* IDZSwiftSafePipeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDZSwiftSafePipeTests.swift; sourceTree = "<group>"; };
@@ -100,15 +101,15 @@
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
+				30B5D3FF209D629C00E8A364 /* README.md */,
 				OBJ_6 /* Package.swift */,
 				OBJ_7 /* Sources */,
 				OBJ_10 /* Tests */,
 				OBJ_14 /* Products */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
@@ -193,7 +194,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_14 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
