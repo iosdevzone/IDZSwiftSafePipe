@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>SafePipe Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/SafePipe" class="dashAnchor"></a>
+    <a title="SafePipe Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (100% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        SafePipe Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/SafePipe.html">SafePipe</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>SafePipe</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">SafePipe</span></code></pre>
+
+                </div>
+              </div>
+            <p>Provides a replacement for Foundation&rsquo;s <code>Pipe</code> class.</p>
+
+<p>On macOS when the underlying system call fails, Foundation
+creates an object with file handles set to zero. On Unix,
+the program crashes with a <code>fatalError</code>.</p>
+
+<p>This class, <code>SafePipe</code> has a failable initializer and
+will return <code>nil</code> if the underlying system call fails.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16IDZSwiftSafePipe0bC0CACSgycfc"></a>
+                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16IDZSwiftSafePipe0bC0CACSgycfc">init()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a new pipe. Returns <code>nil</code> if the underlying system
+call fails.
+The <code>pipe (2)</code> system call only fail under the following
+conditions:</p>
+
+<ul>
+<li><code>EFAULT</code> An invalid buffer is passed. In this implementation this
+could only happen if the system fails to allocate two 32-bit integers
+if this occurs it is unlikely that the situation is recoverable. This
+mode of failure has not been tested for this implementation and may
+cause a crash.</li>
+<li><code>EMFILE</code> Too many file descriptors are active. In this case <code>nil</code> is returned.</li>
+<li><code>ENFILE</code> The system file table is full. In this case <code>nil</code> is returned.</li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">?()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16IDZSwiftSafePipe0bC0C20fileHandleForReadingSo04FileE0Cvp"></a>
+                    <a name="//apple_ref/swift/Property/fileHandleForReading" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16IDZSwiftSafePipe0bC0C20fileHandleForReadingSo04FileE0Cvp">fileHandleForReading</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The file handle to use for reading.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">var</span> <span class="nv">fileHandleForReading</span><span class="p">:</span> <span class="kt">FileHandle</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16IDZSwiftSafePipe0bC0C20fileHandleForWritingSo04FileE0Cvp"></a>
+                    <a name="//apple_ref/swift/Property/fileHandleForWriting" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16IDZSwiftSafePipe0bC0C20fileHandleForWritingSo04FileE0Cvp">fileHandleForWriting</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The file handle to use for writing.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">var</span> <span class="nv">fileHandleForWriting</span><span class="p">:</span> <span class="kt">FileHandle</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2018-05-04)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
